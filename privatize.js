@@ -16,7 +16,7 @@ var privatize = function(construct, privat){
         if(privat[i] in construct.prototype){
             delete publicMembers[member];
         } else {
-            throw Exception('Unknown privat method ' + privat[i] + ' in prototype')
+            throw Exception('Unknown private method ' + privat[i] + ' in prototype')
         }
     }
 

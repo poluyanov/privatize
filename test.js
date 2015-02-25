@@ -4,15 +4,16 @@ var SuperAnimal = function(name){
 };
 
 SuperAnimal.prototype.hello = function(){
-    console.log(this.privateName);
+    console.log('Hello ' + this.privateName);
 };
 
 SuperAnimal.prototype.privateHello = function(){
-    console.log('privateHello' + this.privateName);
+    console.log('Private hello ' + this.privateName);
 };
 
-var Animal = privatize(SuperAnimal, ['privateHello'])
+var Animal = privatize(SuperAnimal, ['privateHello']);
 
-new Animal('Сow');
+var animal = new Animal('Сow');
 
-console.log(new Animal('Сow'))
+console.log(animal);
+animal.hello()
